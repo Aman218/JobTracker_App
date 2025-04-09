@@ -1,0 +1,29 @@
+
+@media (max-width:1228px) {
+    #right-section{
+        width: 70%;
+    }
+}
+@media (max-width:1028px) {
+    #right-section{
+        width: 100%;
+    }
+    #body-container{
+        flex-direction: column;
+    }
+    #left-section{
+        width: 100%;
+    }
+}
+
+@media (max-width:628px) {
+    #right-section{
+        width: 100%;
+    }
+    #body-container{
+        flex-direction: column;
+    }
+    #left-section{
+        width: 100%;
+    }
+}

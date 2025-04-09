@@ -1,0 +1,20 @@
+#application-cont{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 0.7rem;
+    
+}
+@media (max-width:1228px) {
+    #application-cont{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+@media (max-width:628px) {
+    #application-cont{
+        grid-template-columns: repeat(1,1fr);
+    }
+}
+#no-results{
+    width: 100%;
+    display: block;
+}

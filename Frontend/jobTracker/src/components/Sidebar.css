@@ -1,0 +1,6 @@
+#search-div{
+    border: 2px solid rgba(220, 214, 214, 0.625);
+}
+#search-div:focus-within {
+    border: 2px solid rgba(71, 109, 233, 0.559);
+  }
