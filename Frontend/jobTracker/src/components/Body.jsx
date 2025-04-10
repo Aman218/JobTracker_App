@@ -9,7 +9,7 @@ function Body(){
         fetchData();
     },[])
     async function fetchData(){
-        let response=await fetch('http://localhost:3000/getAllJobApplications');
+        let response=await fetch('https://jobtracker-app.onrender.com/getAllJobApplications');
         let finalData=await response.json();
         setData(finalData);
     }

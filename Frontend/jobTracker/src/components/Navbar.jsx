@@ -31,7 +31,7 @@ function Navbar(props) {
     e.preventDefault();
 
     try {
-      const response = await fetch('http://localhost:3000/post/jobs', {
+      const response = await fetch('https://jobtracker-app.onrender.com/post/jobs', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

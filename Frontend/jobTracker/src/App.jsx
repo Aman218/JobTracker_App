@@ -11,7 +11,7 @@ function App(){
 
   async function fetchData() {
     console.log('Function called')
-    const response = await fetch('http://localhost:3000/getAllJobApplications');
+    const response = await fetch('https://jobtracker-app.onrender.com/getAllJobApplications');
     const finalData = await response.json();
     setData(finalData);
   }
