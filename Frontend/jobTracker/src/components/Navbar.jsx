@@ -4,7 +4,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import ClearIcon from '@mui/icons-material/Clear';
 import './Navbar.css';
 
-function Navbar({ onAddJob }) {
+function Navbar(props) {
   const [flag, setFlag] = useState(true);
   const [showModal, setShowModal] = useState(false);
   const [formData, setFormData] = useState({
@@ -27,29 +27,50 @@ function Navbar({ onAddJob }) {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    onAddJob(formData);
-    setFormData({
-      company: '',
-      role: '',
-      status: 'Applied',
-      date: '',
-      link: ''
-    });
-    setShowModal(false);
+
+    try {
+      const response = await fetch('http://localhost:3000/post/jobs', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      });
+
+      if (response.ok) {
+        alert("Job added successfully!");
+     
+
+        setFormData({
+          company: '',
+          role: '',
+          status: 'Applied',
+          date: '',
+          link: ''
+        });
+        setShowModal(false);
+        window.location.reload();
+       
+      } else {
+        alert("Failed to add job. Try again.");
+      }
+    } catch (error) {
+      console.error("Error adding job:", error);
+      alert("Error occurred while adding job.");
+    }
   };
 
   return (
     <>
       <div className="flex outer-container-nav justify-between items-center bg-[#fff] py-[0.7rem] pb-[0.9rem] px-[0.9rem] w-[100%] relative">
         <h1 id='jobTracker' className="text-[1.8rem] font-[600] text-[#2563eb]">JobTracker</h1>
-        <p id='total' className="text-[1.5rem] font-bold">Total</p>
+        <p id='total' className="text-[1.5rem] font-bold">Total: {props.data.length}</p>
         <div className='flex items-center button-container bg-[#f0e9a9ee] px-[0.7rem] py-[0.4rem] rounded-[7px]' onClick={() => setShowModal(true)}>
           <button 
             id='btn' 
             className="text-[1.1rem] font-[500] text-[#2563eb] cursor-pointer"
-            
           > 
             <AddIcon /> Add New Application
           </button>

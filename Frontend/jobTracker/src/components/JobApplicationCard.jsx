@@ -1,6 +1,7 @@
 import { jobApplications } from "../utils/jobApplications";
 import './JobApplicationCard.css';
 import SpecificCard from "./SpecificCard";
+import Shimmer from "./Shimmer";
 function JobApplicationCard(props){
 
     return (
@@ -8,12 +9,12 @@ function JobApplicationCard(props){
            <div id='application-cont'>
            {props.data.length > 0 ? (
                 props.data.map((application) => (
-                    <SpecificCard key={application.id} application={application} />
+                    <SpecificCard key={application._id} application={application} />
                 ))
             ) : (
-                <div id="no-results">
-                    <p className="font-bold text-[0.8rem]" >No applications found matching your criteria</p>
-                </div>
+                
+                 <Shimmer/>
+              
             )}
            </div>
              

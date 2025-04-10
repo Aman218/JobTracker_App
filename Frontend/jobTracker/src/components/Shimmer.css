@@ -1,0 +1,40 @@
+.animation{
+    animation:blink;
+    animation-timing-function: linear;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    transition: all;
+}
+@keyframes blink{
+    0%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 0.5;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+#grid{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 0.7rem;
+    
+}
+@media (max-width:1228px) {
+    #grid{
+        grid-template-columns: repeat(2,1fr);
+    }
+    #shimmer-cont{
+        width: 380px;
+    }
+}
+@media (max-width:628px) {
+    #grid{
+        grid-template-columns: repeat(1,1fr);
+    }
+    #shimmer-cont{
+        width: 90vw;
+    }
+}
