@@ -45,11 +45,11 @@ function Navbar({ onAddJob }) {
       <div className="flex outer-container-nav justify-between items-center bg-[#fff] py-[0.7rem] pb-[0.9rem] px-[0.9rem] w-[100%] relative">
         <h1 id='jobTracker' className="text-[1.8rem] font-[600] text-[#2563eb]">JobTracker</h1>
         <p id='total' className="text-[1.5rem] font-bold">Total</p>
-        <div className='flex items-center button-container bg-[#f0e9a9ee] px-[0.7rem] py-[0.4rem] rounded-[7px]'>
+        <div className='flex items-center button-container bg-[#f0e9a9ee] px-[0.7rem] py-[0.4rem] rounded-[7px]' onClick={() => setShowModal(true)}>
           <button 
             id='btn' 
             className="text-[1.1rem] font-[500] text-[#2563eb] cursor-pointer"
-            onClick={() => setShowModal(true)}
+            
           > 
             <AddIcon /> Add New Application
           </button>

@@ -7,3 +7,10 @@
         width: 100%;
     }
 }
+#input-text{
+    padding: 0.1rem 0.1rem;
+    /* background-color: red; */
+    font-size: 0.8rem;
+    outline: 1px solid rgb(42, 42, 202);
+    width:60%;
+}
