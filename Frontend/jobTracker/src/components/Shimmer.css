@@ -1,3 +1,4 @@
+
 .animation{
     animation:blink;
     animation-timing-function: linear;
@@ -28,6 +29,14 @@
     }
     #shimmer-cont{
         width: 380px;
+    }
+}
+@media (max-width:828px) {
+    #grid{
+        grid-template-columns: repeat(2,1fr);
+    }
+    #shimmer-cont{
+        width: 280px;
     }
 }
 @media (max-width:628px) {

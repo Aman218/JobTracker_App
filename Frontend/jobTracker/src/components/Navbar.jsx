@@ -93,7 +93,7 @@ function Navbar(props) {
                 </button>
               </div>
               <p className='font-bold mt-0.5'>
-                Total
+                 Total: {props.data.length}
               </p>
             </div>
           </div>

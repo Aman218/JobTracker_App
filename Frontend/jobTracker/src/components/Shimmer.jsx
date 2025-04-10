@@ -8,7 +8,7 @@ function Shimmer(){
          <div id='grid'>
            {arr.map((data,index)=>{
              return (
-                <div key={index} id='shimmer-cont' className="animation w-[310px] h-[150px] rounded-lg bg-[#d4d0d0] border border-white">
+                <div key={index} id='shimmer-cont' className="animation w-[310px] h-[150px] rounded-lg bg-[#e3e2d7] border border-white">
                      
                  </div>
              )
